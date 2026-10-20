@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#9cc5d3" />
+    <title>Horizon Lanes</title>
+  </head>
+  <body>
+    <main id="game">
+      <div id="loading" class="overlay">
+        <div class="panel">
+          <p class="eyebrow">HORIZON LANES</p>
+          <h1>Preparing the road</h1>
+          <p id="loading-message">Loading environment assets…</p>
+        </div>
+      </div>
+      <div id="start-screen" class="overlay" hidden>
+        <div class="panel">
+          <p class="eyebrow">ENDLESS DRIVE</p>
+          <h1>Find your horizon.</h1>
+          <p>Take the long way through the wild.</p>
+          <button id="start-button" type="button">Start driving</button>
+          <p class="controls">W / ↑ accelerate &nbsp;·&nbsp; S / ↓ brake<br />A D / ← → steer</p>
+        </div>
+      </div>
+      <div id="error-screen" class="overlay" hidden>
+        <div class="panel">
+          <p class="eyebrow">UNABLE TO START</p>
+          <h1>Something went wrong.</h1>
+          <p id="error-message"></p>
+          <p>Check that the game is served over HTTP and the asset files are available under /Assets.</p>
+        </div>
+      </div>
+      <section id="hud" aria-live="polite" hidden>
+        <div class="brand">HORIZON <span>LANES</span></div>
+        <div class="readout"><strong id="speed">0</strong><span>KM/H</span></div>
+        <div class="distance"><span>DISTANCE</span><strong id="distance">0.0 km</strong></div>
+        <button id="pause-button" type="button" aria-label="Pause game">Ⅱ</button>
+      </section>
+      <div id="crosshair" aria-hidden="true"></div>
+      <div id="touch-controls" hidden>
+        <button type="button" data-control="left" aria-label="Steer left">←</button>
+        <button type="button" data-control="right" aria-label="Steer right">→</button>
+        <button type="button" data-control="brake" aria-label="Brake">↓</button>
+        <button type="button" data-control="accelerate" aria-label="Accelerate">↑</button>
+      </div>
+    </main>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
